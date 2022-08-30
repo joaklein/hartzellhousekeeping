@@ -1,0 +1,5 @@
+{
+    "require": {
+        "vendor/htmlburger/carbon-fields": "^3.3"
+    }
+}
