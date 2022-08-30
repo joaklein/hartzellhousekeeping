@@ -9,20 +9,21 @@
     <!-- Primary Meta Tags -->
     <title><?php echo get_bloginfo('name'); ?></title>
     <meta name="title" content="Hartzell Housekeeping">
-    <meta name="description" content="">
+    <meta name="description" content="<?php echo carbon_get_theme_option('meta_description'); ?>">
+    <meta name="keywords" content="<?php echo carbon_get_theme_option('meta_keywords'); ?>">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="#">
     <meta property="og:title" content="Hartzell Housekeeping">
-    <meta property="og:description" content="">
+    <meta property="og:description" content="<?php echo carbon_get_theme_option('meta_description'); ?>">
     <meta property="og:image" content="<?php echo wp_get_attachment_url(carbon_get_theme_option('logo_full')); ?>">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="#">
     <meta property="twitter:title" content="Hartzell Housekeeping">
-    <meta property="twitter:description" content="">
+    <meta property="twitter:description" content="<?php echo carbon_get_theme_option('meta_description'); ?>">
     <meta property="twitter:image" content="<?php echo wp_get_attachment_url(carbon_get_theme_option('logo_full')); ?>">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->

@@ -28,6 +28,10 @@ function crb_attach_theme_options()
             Field::make('text', 'tiktok_url', 'TikTok URL'),
             Field::make('text', 'phone_num', 'Phone Number'),
             Field::make('text', 'email_address', 'Email Address')
+        ))
+        ->add_tab('Meta Information', array(
+            Field::make('text', 'meta_description', 'Business Short Description'),
+            Field::make('text', 'meta_keywords', 'Business Keywords')
         ));
 }
 
