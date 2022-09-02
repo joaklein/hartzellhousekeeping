@@ -462,6 +462,12 @@ main h2 {
 
 /* PAGE TEAM */
 
+.team-members {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .team-member {
     display: flex;
     flex-direction: column;
