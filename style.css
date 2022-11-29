@@ -252,23 +252,37 @@ main h2 {
 
 .header-box h3 {
     text-align: center;
+    line-height: .8;
 }
 
-.section-text-right {
+.section-text-left, .section-text-right {
     display: flex;
-    justify-content: flex-end;
     margin: 4rem auto 0;
     position: relative;
     min-height: 20rem;
     align-items: center;
     max-width: 100%;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.section-text-left h1, .section-text-right h1 {
+    line-height: .8;
+}
+
+.section-text-right {
+    justify-content: flex-end;
+    background: #b76e79;
+}
+
+.section-img-left, .section-img-right {
+    position: absolute;
+    width: calc(50% - 1.5rem);
+    height: 100%;
 }
 
 .section-img-left {
-    position: absolute;
     left: 0;
-    width: calc(50% - 1.5rem);
-    height: 20rem;
 }
 
 .section-img-left img {
@@ -279,20 +293,12 @@ main h2 {
 }
 
 .section-text-left {
-    display: flex;
     justify-content: flex-start;
-    margin: 4rem auto 0;
-    position: relative;
-    min-height: 20rem;
-    align-items: center;
-    max-width: 100%;
+    background: #6e9db7;
 }
 
 .section-img-right {
-    position: absolute;
     right: 0;
-    width: calc(50% - 1.5rem);
-    height: 20rem;
 }
 
 .section-img-right img {
@@ -500,6 +506,7 @@ footer {
     flex-direction: column;
     color: #b76e79;
     gap: 1rem;
+    box-shadow: 0 0 .5rem #00000050;
 }
 
 .socials {
@@ -548,6 +555,7 @@ footer {
     nav {
         padding: 0 1rem;
         grid-template-columns: 1fr 1fr 1fr;
+        z-index: 2;
     }
 
     .nav-items {
@@ -580,31 +588,28 @@ footer {
 
     .section-text-left, .section-text-right {
         flex-direction: column;
+        background: #000;
+        justify-content: center;
+        padding: 1rem .5rem;
     }
 
     .section-img-left, .section-img-right {
         position: absolute;
         width: 100%;
-        height: 12rem;
-        z-index: -1;
         top: 0;
     }
 
-    .section-img-left {
-        padding-right: .5rem;
-    }
-
-    .section-img-right {
-        padding-left: .5rem;
+    .section-img-left img, .section-img-right img {
+        opacity: .6;
+        border-radius: 0;
     }
 
     .section-text {
         width: 100%;
-        padding-top: 5rem;
+        z-index: 1;
     }
 
     .section-text h1 {
-        text-shadow: 0 0 .3rem #fff;
         font-size: 3.5rem;
         margin-bottom: 1rem;
     }
