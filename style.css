@@ -440,16 +440,14 @@ main h2 {
     cursor: pointer;
 }
 
-.minimize {
-    height: 0;
-    overflow: hidden;
-}
-
 .service-lists {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin: 1rem;
+    overflow: hidden;
+    transition: .5s ease;
+    max-height: 1200px;
 }
 
 .services-left-col, .services-right-col {
@@ -464,6 +462,10 @@ main h2 {
 
 .service-lists li {
     list-style: circle;
+}
+
+.minimize {
+    max-height: 0;
 }
 
 /* PAGE TEAM */
