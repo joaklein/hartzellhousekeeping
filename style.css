@@ -447,7 +447,7 @@ main h2 {
     margin: 1rem;
     overflow: hidden;
     transition: .5s ease;
-    max-height: 1200px;
+    max-height: 5000px;
 }
 
 .services-left-col, .services-right-col {
@@ -631,6 +631,10 @@ footer {
     .modal-img, .modal-vid {
         height: auto;
         width: 100%;
+    }
+
+    .services-section-header h3 {
+        width: calc(100% - 3rem);
     }
 
     .service-lists {
