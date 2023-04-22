@@ -415,13 +415,17 @@ main h2 {
     flex-direction: column;
     border: 2px solid #b76e79;
     margin-bottom: 4rem;
+    padding: 1rem;
+    scroll-margin-top: 4rem;
 }
 
 .services-section-header {
-    position: relative;
+    position: sticky;
+    top: 4rem;
     text-align: center;
     background: #b76e79;
     color: #fff;
+    margin: -1rem -1rem 0;
 }
 
 .min-max {
@@ -440,14 +444,15 @@ main h2 {
     cursor: pointer;
 }
 
+.service-list-wrapper {
+    overflow: hidden;
+    transition: .5s ease;
+}
+
 .service-lists {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    margin: 1rem;
-    overflow: hidden;
-    transition: .5s ease;
-    max-height: 5000px;
 }
 
 .services-left-col, .services-right-col {

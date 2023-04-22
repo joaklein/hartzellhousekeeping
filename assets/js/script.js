@@ -1,70 +1,75 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('.mobile-menu-icon').addEventListener('click', () => {
-        document.querySelector('.nav-items').classList.toggle('show');
-    });
+        document.querySelector('.nav-items').classList.toggle('show')
+    })
 
-    const contactBtn = document.querySelector('#contact');
-    const contactBox = document.querySelector('.contact');
-    const contactClose = document.querySelector('#contact-close');
+    const contactBtn = document.querySelector('#contact')
+    const contactBox = document.querySelector('.contact')
+    const contactClose = document.querySelector('#contact-close')
 
-    contactBtn.addEventListener('click', () => contactBox.style.display = 'flex');
+    contactBtn.addEventListener('click', () => contactBox.style.display = 'flex')
 
-    contactClose.addEventListener('click', () => contactBox.style.display = 'none');
+    contactClose.addEventListener('click', () => contactBox.style.display = 'none')
 
     if (document.URL.includes("portfolio")) {
-        const images = document.querySelectorAll('.gallery-image');
-        const modal = document.querySelector('#myModal');
-        const modalImg = document.querySelector('#modal-img');
-        const modalVid = document.querySelector('#modal-vid');
-        const galleryContainer = document.querySelector('.gallery');
+        const images = document.querySelectorAll('.gallery-image')
+        const modal = document.querySelector('#myModal')
+        const modalImg = document.querySelector('#modal-img')
+        const modalVid = document.querySelector('#modal-vid')
+        const galleryContainer = document.querySelector('.gallery')
 
         function showModal() {
-            modal.style.display = 'flex';
+            modal.style.display = 'flex'
             if (this.tagName === 'VIDEO') {
-                modalVid.src = this.src;
-                modalVid.style.display = ('flex');
+                modalVid.src = this.src
+                modalVid.style.display = ('flex')
             } else {
-                modalImg.src = this.src;
-                modalImg.style.display = ('flex');
+                modalImg.src = this.src
+                modalImg.style.display = ('flex')
             }
-        };
+        }
 
-        galleryContainer.style.gridAutoRows = galleryContainer.firstElementChild.clientWidth + 'px';
+        galleryContainer.style.gridAutoRows = galleryContainer.firstElementChild.clientWidth + 'px'
 
-        for (let image of images) {
-            image.addEventListener('click', showModal);
-        };
+        images.forEach((image) => {
+            image.addEventListener('click', showModal)
+        })
 
         modal.addEventListener('click', () => {
-            modal.style.display = 'none';
-            modalImg.style.display = 'none';
-            modalVid.style.display = 'none';
-        });
-    };
+            modal.style.display = 'none'
+            modalImg.style.display = 'none'
+            modalVid.style.display = 'none'
+        })
+    }
 
     if (document.URL.includes("testimonials")) {
         const mediaQuery = window.matchMedia('(max-width: 768px)')
         if (!mediaQuery.matches) {
-            let containerHeight = document.querySelector('.testimonial-container').offsetHeight;
-            document.querySelector('.testimonial-container').style.height = (containerHeight / 3) + 300 + 'px';
-        };
-    };
+            let containerHeight = document.querySelector('.testimonial-container').offsetHeight
+            document.querySelector('.testimonial-container').style.height = (containerHeight / 3) + 300 + 'px'
+        }
+    }
 
     if (document.URL.includes("services")) {
-        const minMaxBoxes = document.querySelectorAll('.min-max');
+        const serviceSections = document.querySelectorAll('.services-section')
 
-        for (let minMaxBox of minMaxBoxes) {
-            const serviceList = minMaxBox.parentElement.nextElementSibling;
-            minMaxBox.addEventListener('click', () => {
-                if (minMaxBox.childNodes[1].classList.contains('fa-minus')) {
-                    minMaxBox.childNodes[1].classList.replace('fa-minus', 'fa-plus');
-                    serviceList.classList.toggle('minimize');
+        serviceSections.forEach((serviceSection) => {
+            const minMax = serviceSection.querySelector('.min-max')
+            const wrapper = serviceSection.querySelector('.service-list-wrapper')
+            const serviceList = serviceSection.querySelector('.service-lists')
+            wrapper.style.maxHeight = `${serviceSection.offsetHeight}px`
+
+            minMax.addEventListener('click', () => {
+                if (minMax.childNodes[1].classList.contains('fa-minus')) {
+                    minMax.childNodes[1].classList.replace('fa-minus', 'fa-plus')
+                    wrapper.style.maxHeight = 0
+                    serviceSection.scrollIntoView({behavior: 'smooth'})
                 } else {
-                    minMaxBox.childNodes[1].classList.replace('fa-plus', 'fa-minus');
-                    serviceList.classList.toggle('minimize');
-                };
-            });
-        };
-    };
-});
+                    minMax.childNodes[1].classList.replace('fa-plus', 'fa-minus')
+                    wrapper.style.maxHeight = `${serviceList.offsetHeight}px`
+                }
+            })
+        })
+    }
+})
