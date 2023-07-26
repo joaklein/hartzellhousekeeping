@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const mediaQuery = window.matchMedia('(max-width: 768px)')
         if (!mediaQuery.matches) {
             let containerHeight = document.querySelector('.testimonial-container').offsetHeight
-            document.querySelector('.testimonial-container').style.height = (containerHeight / 3) + 300 + 'px'
+            document.querySelector('.testimonial-container').style.height = (containerHeight / 3) + 400 + 'px'
         }
     }
 
