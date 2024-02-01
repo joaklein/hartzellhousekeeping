@@ -74,7 +74,6 @@
             <li><a href="/portfolio">Portfolio</a></li>
             <li><a href="/testimonials">Testimonials</a></li>
             <li><a href="/services">Services</a></li>
-            <li><a href="/team">Our Team</a></li>
             <li><a href="javascript:void(0);" id='contact'>Contact Us</a></li>
         </ul>
 
